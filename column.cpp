@@ -11,7 +11,7 @@
 
 
 template<int row, int column>
-int AverageNumbers(int (&rowList)[row][column]) {
+float AverageNumbers(int (&rowList)[row][column]) {
     // This function calculates the area of the triangle
 
     // process & output
@@ -23,7 +23,7 @@ int AverageNumbers(int (&rowList)[row][column]) {
             total = total + rowList[rowNumber][columnNumber];
         }
     }
-    average = total / (row * column);
+    average = total / (row * column * 1.00);
     return average;
 }
 
@@ -37,10 +37,13 @@ int main() {
     int rowList[rowInteger][columnInteger];
 
     // process
+    std::cout << "Rows: " << rowInteger << std::endl;
+    std::cout << "Columns: " << columnInteger << std::endl;
     std::cout << "" << std::endl;
     try {
         for (int rowNumber = 0; rowNumber < rowInteger; rowNumber++) {
-            for (int columnNumber = 0; columnNumber < columnInteger; columnNumber++) {
+            for (int columnNumber = 0; columnNumber < columnInteger;
+            columnNumber++) {
                 std::random_device rseed;
                 std::mt19937 rgen(rseed());
                 std::uniform_int_distribution<int> idist(1, 100);
@@ -52,13 +55,14 @@ int main() {
                     std::cout << aSingleNumber << "  ";
                 }
             }
+            std::cout << "" << std::endl;
         }
         average = AverageNumbers(rowList);
-        std::cout << "\n The average of all the numbers is " << std::fixed
+        std::cout << "\nThe average of all the numbers is " << std::fixed
         << std::setprecision(2) << std::setfill('0') << average << "."
         << std::endl;
     } catch (std::invalid_argument) {
         std::cout << "Invalid number!" << std::endl;
-        std::cout << "\nDone." << std::endl;
     }
+    std::cout << "\nDone." << std::endl;
 }
