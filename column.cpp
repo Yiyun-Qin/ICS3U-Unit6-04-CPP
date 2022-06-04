@@ -11,7 +11,7 @@
 
 template<int row, int column>
 float AverageNumbers(int (&rowList)[row][column]) {
-    // This function calculates the average of the 
+    // This function calculates the average of the numbers
 
     // process & output
     int total = 0;
@@ -30,7 +30,7 @@ float AverageNumbers(int (&rowList)[row][column]) {
 int main() {
     // This function does try and catch
     const int rowInteger = 3;
-    const int columnInteger = 4;
+    const int columnInteger = 2;
     int aSingleNumber;
     float average;
     int rowList[rowInteger][columnInteger];
