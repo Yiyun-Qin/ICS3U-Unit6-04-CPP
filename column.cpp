@@ -2,17 +2,16 @@
 //
 // Created by Yiyun Qin
 // Created in May 2022
-// This is a math program, calculating the area of the triangle
+// This is a math program, listing numbers in a table and calculating average
 
 #include <iostream>
-#include <string>
 #include <iomanip>
 #include <random>
 
 
 template<int row, int column>
 float AverageNumbers(int (&rowList)[row][column]) {
-    // This function calculates the area of the triangle
+    // This function calculates the average of the 
 
     // process & output
     int total = 0;
